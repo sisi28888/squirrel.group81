@@ -1,1 +1,25 @@
-nul
+<!DOCTYPE html>
+
+<html>
+    
+    <body>
+    
+
+        <div  style="color:#009f6b">
+        <div  style="font-size:45px;">
+        <div  style="font-weight:bold;">
+        <div class="text" style=" text-align:center;" >Add a new sighting</div>
+        
+        <hr width="70%" color="#009f6b" />
+        
+        <form method="POST">
+
+        	{% csrf_token %}
+		{{form.as_p}}
+        <br>
+        <input type="submit" value="Add a new sighting">
+        
+	
+        </form>
+    </body>
+</html>
