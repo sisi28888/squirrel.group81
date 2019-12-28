@@ -1,1 +1,26 @@
-null 
+<html>
+    
+    <body>
+        
+        <h1 text-align:center>The squirrels in the Central Park</h1>
+
+        <li><a href='{%url 'sightings:add'%}'><span><font size="5">Click to add a new sighting</font></span></a></li>
+	<li><a href='{% url 'sightings:stats'%}'><span><font size="5">Click to view the statistics of the squirrels</font></span></a></li>
+
+
+        <h2>Sightings of all squirrels </h2> 
+            {%if sightings%}
+                <ul>
+                    {%for sighting in sightings%}
+		    <li>{{sighting}}</li>
+		    <a href='{% url 'sightings:update' Unique_Squirrel_ID=sighting.Unique_Squirrel_ID%}'>Update</a>
+                   
+		    {%endfor%}
+                </ul>
+            {% else %}
+                <p>No sightings</p>
+            {%endif%}
+	
+	    
+    </body>
+</html>
